@@ -1,0 +1,60 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "58b8a09ca438d6c6d27477807d9d0899",
+    "content-hash": "1f49ec5af1db4404572f74630e046695",
+    "packages": [
+        {
+            "name": "vehsamrak/vehsa",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Vehsamrak/Vehsa.git",
+                "reference": "73bf62ca8baa241901c60188093eed3bb54cf334"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Vehsamrak/Vehsa/zipball/73bf62ca8baa241901c60188093eed3bb54cf334",
+                "reference": "73bf62ca8baa241901c60188093eed3bb54cf334",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL v3"
+            ],
+            "authors": [
+                {
+                    "name": "Petr Karmashev",
+                    "email": "smonkl@bk.ru"
+                }
+            ],
+            "description": "Simplest MVC Framework",
+            "keywords": [
+                "Simple",
+                "framework",
+                "mvc"
+            ],
+            "time": "2016-04-14 18:34:43"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

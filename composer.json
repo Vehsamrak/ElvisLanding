@@ -1,0 +1,12 @@
+{
+    "name": "slonworks/elvisland",
+    "authors": [
+        {
+            "name": "Petr Karmashev",
+            "email": "smonkl@bk.ru"
+        }
+    ],
+    "require": {
+        "vehsamrak/vehsa": "^1.0"
+    }
+}
