@@ -8,12 +8,14 @@
     h1 {
         display: block;
         padding: 30px;
+        padding-top: 60px;
+        font-size: 60px;
     }
 
     .feature {
         display: inline-block;
         background-color: chartreuse;
-        padding: 40px;
+        padding: 60px 100px;
         margin: 10px;
     }
 
