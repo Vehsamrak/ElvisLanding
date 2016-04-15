@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "58b8a09ca438d6c6d27477807d9d0899",
-    "content-hash": "1f49ec5af1db4404572f74630e046695",
+    "hash": "6d8a306310a33a1f2842675c06096eec",
+    "content-hash": "eeda9a045815330a9cb8ca831c0f3b3c",
     "packages": [
         {
             "name": "vehsamrak/vehsa",
-            "version": "1.2.0",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Vehsamrak/Vehsa.git",
-                "reference": "38be7f03e0ae93030a9e4dc5379e0444d1ede848"
+                "reference": "72ce645ed1f647c519ef86eb60e118c33576b78f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Vehsamrak/Vehsa/zipball/38be7f03e0ae93030a9e4dc5379e0444d1ede848",
-                "reference": "38be7f03e0ae93030a9e4dc5379e0444d1ede848",
+                "url": "https://api.github.com/repos/Vehsamrak/Vehsa/zipball/72ce645ed1f647c519ef86eb60e118c33576b78f",
+                "reference": "72ce645ed1f647c519ef86eb60e118c33576b78f",
                 "shasum": ""
             },
             "require": {
@@ -46,7 +46,7 @@
                 "framework",
                 "mvc"
             ],
-            "time": "2016-04-14 20:17:26"
+            "time": "2016-04-15 19:42:57"
         }
     ],
     "packages-dev": [],
