@@ -1,6 +1,6 @@
 <?php
 
-namespace Slonworks\Elvisland\Entity;
+namespace Entity;
 
 /**
  * @author Vehsamrak

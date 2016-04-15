@@ -15,8 +15,13 @@
 
     <div class="newsbox">
         <span class="newsbox-title">Latest News</span>
-        <div class="news">first news</div>
-        <div class="news">second news</div>
-        <div class="news">third news</div>
+        <?php
+        /** @var \Entity\News[] $news */
+        foreach ($news as $newsEntry) {
+            ?>
+            <div class="news"><?= $newsEntry->getText() ?></div>
+            <?php
+        }
+        ?>
     </div>
 </div>
