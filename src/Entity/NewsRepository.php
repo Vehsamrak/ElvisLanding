@@ -16,7 +16,7 @@ class NewsRepository extends AbstractRepository
     public function findAllSortedByDate(): array
     {
         $connection = $this->connection;
-        $queryResults = $connection->query('SELECT * FROM news ORDER BY date DESC');
+        $queryResults = $connection->query('SELECT author, title, text FROM news ORDER BY date DESC');
 
         $queryResults = $queryResults->fetchAll(\PDO::FETCH_ASSOC);
 
