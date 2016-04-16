@@ -3,3 +3,6 @@ vendor/
 
 # PhpStorm
 .idea/
+
+# Configuration
+src/config.php
