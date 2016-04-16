@@ -16,7 +16,7 @@ class NewsRepository extends AbstractRepository
     public function findAllSortedByDate(): array
     {
         $queryResults = $this->connection->query('
-            SELECT n.id, n.title, n.text, a.name as authorName
+            SELECT n.id, n.title, n.text, n.date, a.name as authorName
             FROM news n 
             LEFT JOIN authors a ON a.login = n.author 
             ORDER BY date DESC'
@@ -28,7 +28,13 @@ class NewsRepository extends AbstractRepository
 
         if ($queryResults) {
             foreach ($queryResults as $result) {
-                $newsCollection[] = new News($result['id'], $result['authorName'], $result['title'], $result['text']);
+                $newsCollection[] = new News(
+                    $result['id'],
+                    $result['date'],
+                    $result['authorName'],
+                    $result['title'],
+                    $result['text']
+                );
             }
         }
 

@@ -7,4 +7,5 @@ return [
     'database_password' => '',
     'database_name'     => 'elvisland',
     'root_directory'    => __DIR__,
+    'default_password'  => 'g8vABh',
 ];

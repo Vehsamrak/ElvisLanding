@@ -12,7 +12,7 @@ class News
     /** @var int */
     private $id;
 
-    /** @var \DateTime */
+    /** @var string */
     private $createdAt;
 
     /** @var string */
@@ -27,14 +27,20 @@ class News
 
     /**
      * @param int    $id
+     * @param string $createdAt
      * @param string $authorName
      * @param string $title
      * @param string $text
      */
-    public function __construct(int $id, string $authorName, string $title, string $text)
-    {
+    public function __construct(
+        int $id,
+        string $createdAt,
+        string $authorName,
+        string $title,
+        string $text
+    ) {
         $this->id = $id;
-        $this->createdAt = new \DateTime();
+        $this->createdAt = $createdAt;
         $this->authorName = $authorName;
         $this->title = $title;
         $this->text = $text;
@@ -48,11 +54,17 @@ class News
         return $this->id;
     }
 
+    /**
+     * @return string
+     */
     public function getCreatedAt(): string
     {
-        return $this->createdAt->format('Y-m-d H:i');
+        return $this->createdAt;
     }
 
+    /**
+     * @return string
+     */
     public function getAuthorName(): string
     {
         return $this->authorName;
@@ -66,6 +78,9 @@ class News
         return $this->title;
     }
 
+    /**
+     * @return string
+     */
     public function getText(): string
     {
         return $this->text;

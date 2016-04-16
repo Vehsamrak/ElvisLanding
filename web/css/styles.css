@@ -12,24 +12,52 @@ h1 {
 
 .feature {
     display: inline-block;
-    background-color: chartreuse;
+    background-color: forestgreen;
     padding: 60px 100px;
     margin: 10px;
+    font-size: 20px;
+    color: white;
 }
 
 .break-30 {
     padding: 30px;
 }
 
-.newsbox-title {
+.newsbox-title, .newsbox-bottom {
     font-size: 28px;
     display: block;
     padding: 20px;
-    background-color: #E4FF00;
+    background-color: #FFC107;
+    height: 20px;
+    line-height: 20px;
 }
 
 .newsbox .news {
-    background-color: #F1FAA7;
+    position: relative;
     padding: 20px;
     margin: 10px;
+    text-align: left;
 }
+
+.news-info-block {
+    background-color: #AFFF8E;
+    display: inline-block;
+    padding: 20px;
+}
+
+.news-title {
+    top: 0;
+    font-weight: 800;
+    font-size: large;
+}
+
+.news-author {
+    font-size: small;
+}
+
+.news-text {
+    position: absolute;
+    display: inline-block;
+    padding-left: 20px;
+}
+
