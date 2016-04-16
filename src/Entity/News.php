@@ -8,6 +8,9 @@ namespace Entity;
 class News
 {
 
+    /** @var int */
+    private $id;
+
     /** @var \DateTime */
     private $createdAt;
 
@@ -20,17 +23,28 @@ class News
     /** @var string */
     private $text;
 
+
     /**
+     * @param int    $id
      * @param int    $authorId
      * @param string $title
      * @param string $text
      */
-    public function __construct(int $authorId, string $title, string $text)
+    public function __construct(int $id, int $authorId, string $title, string $text)
     {
+        $this->id = $id;
         $this->createdAt = new \DateTime();
         $this->authorId = $authorId;
         $this->title = $title;
         $this->text = $text;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 
     public function getCreatedAt(): string
@@ -41,6 +55,14 @@ class News
     public function getAuthorId(): int
     {
         return $this->authorId;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
     }
 
     public function getText(): string

@@ -15,19 +15,18 @@ class NewsRepository extends AbstractRepository
      */
     public function findAllSortedByDate(): array
     {
-        $connection = $this->connection;
-        $queryResults = $connection->query('SELECT author, title, text FROM news ORDER BY date DESC');
+        $queryResults = $this->connection->query('SELECT id, author, title, text FROM news ORDER BY date DESC');
 
         $queryResults = $queryResults->fetchAll(\PDO::FETCH_ASSOC);
 
-        $entryCollection = [];
+        $newsCollection = [];
 
         if ($queryResults) {
             foreach ($queryResults as $result) {
-                $entryCollection[] = new News($result['author'], $result['title'], $result['text']);
+                $newsCollection[] = new News($result['id'], $result['author'], $result['title'], $result['text']);
             }
         }
 
-        return $entryCollection;
+        return $newsCollection;
     }
 }
