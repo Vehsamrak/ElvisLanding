@@ -3,6 +3,7 @@
 namespace Entity;
 
 /**
+ * News entry
  * @author Vehsamrak
  */
 class News
