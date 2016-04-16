@@ -34,6 +34,7 @@
                     <?= $newsEntry->getText() ?>
                 </div>
             </div>
+
         <?php } ?>
         <span class="newsbox-bottom"></span>
     </div>

@@ -12,11 +12,13 @@ use Vehsamrak\Vehsa\Database;
 class IndexController extends AbstractController
 {
 
+    const MAIN_PAGE_NEWS_COUNT = 3;
+
     public function indexAction()
     {
         $connection = (new Database())->getConnection();
         $newsRepository = new NewsRepository($connection);
 
-        $this->render(['news' => $newsRepository->findAllSortedByDate()]);
+        $this->render(['news' => $newsRepository->findLastSortedByDate(self::MAIN_PAGE_NEWS_COUNT)]);
     }
 }

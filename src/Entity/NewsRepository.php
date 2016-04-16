@@ -11,16 +11,19 @@ class NewsRepository extends AbstractRepository
 {
 
     /**
-     * @return News[]
+     * @param int $newsCount
+     * @return array|News[]
      */
-    public function findAllSortedByDate(): array
+    public function findLastSortedByDate(int $newsCount): array
     {
-        $queryResults = $this->connection->query('
+        $queryResults = $this->connection->prepare('
             SELECT n.id, n.title, n.text, n.date, a.name as authorName
             FROM news n 
-            LEFT JOIN authors a ON a.login = n.author 
-            ORDER BY date DESC'
+            LEFT JOIN authors a ON a.login = n.author
+            ORDER BY date DESC LIMIT :newsCount'
         );
+        $queryResults->bindParam('newsCount', $newsCount, \PDO::PARAM_INT);
+        $queryResults->execute();
 
         $queryResults = $queryResults->fetchAll(\PDO::FETCH_ASSOC);
 
