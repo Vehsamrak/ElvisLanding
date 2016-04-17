@@ -2,9 +2,8 @@
 
 namespace Controller;
 
-use Entity\NewsRepository;
+use Service\NewsProcessor;
 use Vehsamrak\Vehsa\AbstractController;
-use Vehsamrak\Vehsa\Database;
 
 /**
  * @author p.karmashev
@@ -16,9 +15,8 @@ class IndexController extends AbstractController
 
     public function indexAction()
     {
-        $connection = (new Database())->getConnection();
-        $newsRepository = new NewsRepository($connection);
+        $newsProcessor = new NewsProcessor();
 
-        $this->render(['news' => $newsRepository->findLastSortedByDate(self::MAIN_PAGE_NEWS_COUNT)]);
+        $this->render(['news' => $newsProcessor->getLastNews(self::MAIN_PAGE_NEWS_COUNT)]);
     }
 }
