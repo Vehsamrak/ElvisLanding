@@ -103,4 +103,13 @@ class News
     {
         return $this->text;
     }
+
+    /**
+     * Is news post created and not yet persisted to database
+     * @return bool
+     */
+    public function isNew()
+    {
+        return (bool) !$this->id;
+    }
 }

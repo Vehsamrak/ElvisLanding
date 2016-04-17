@@ -49,6 +49,7 @@ class NewsProcessor
      * @param string             $authorLogin
      * @param string             $title
      * @param string             $text
+     * @return bool
      * @throws AuthorNotFound
      */
     public function addNews(\DateTimeImmutable $date, string $authorLogin, string $title, string $text)
@@ -61,6 +62,6 @@ class NewsProcessor
 
         $news = new News($date->format('Y-m-d'), $authorLogin, $author->getName(), $title, $text);
 
-        $this->newsRepository->persist($news);
+        return $this->newsRepository->save($news);
     }
 }

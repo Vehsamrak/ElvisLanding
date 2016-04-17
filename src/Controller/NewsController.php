@@ -17,27 +17,39 @@ class NewsController extends AbstractController
      */
     public function addAction()
     {
-        $author = $this->getParameter('author');
-        $title = $this->getParameter('title');
-        $text = $this->getParameter('text');
-        $date = $this->validateAndCreateDate($this->getParameter('date'));
+        $newsAdded = false;
         $errors = [];
 
-        if (!$author || !$title || !$text || !$date) {
-            $errors[] = 'You must provide author, title and text to post news.';
-        }
+        if ($this->isPost()) {
+            $author = $this->getParameter('author');
+            $title = $this->getParameter('title');
+            $text = $this->getParameter('text');
+            $date = $this->validateAndCreateDate($this->getParameter('date'));
 
-        if (empty($errors)) {
-            $newsProcessor = new NewsProcessor();
+            if (!$author || !$title || !$text) {
+                $errors[] = 'You must provide author, title and text to post news.';
+            }
 
-            try {
-                $newsProcessor->addNews($date, $author, $title, $text);
-            } catch (AuthorNotFound $authorNotFoundException) {
-                $errors[] = 'Author not found.';
+            if (!$date) {
+                $errors[] = 'You must provide valid date.';
+            }
+
+            if (empty($errors)) {
+                $newsProcessor = new NewsProcessor();
+
+                try {
+                    $newsAdded = $newsProcessor->addNews($date, $author, $title, $text);
+                } catch (AuthorNotFound $authorNotFoundException) {
+                    $errors[] = 'Author not found.';
+                }
             }
         }
 
-        $this->render('news', ['errors' => $errors]);
+        if ($newsAdded) {
+        	$this->redirect('/');
+        } else {
+            $this->render('news', ['errors' => $errors]);
+        }
     }
 
     /**
