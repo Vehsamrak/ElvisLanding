@@ -1,5 +1,6 @@
 <?php
 
+use Vehsamrak\Vehsa\ErrorHandler;
 use Vehsamrak\Vehsa\Router;
 
 define('ROOT_DIRECTORY', join(DIRECTORY_SEPARATOR, [__DIR__, '..', 'src']));
@@ -19,4 +20,10 @@ spl_autoload_register(function ($className) {
 });
 
 $router = new Router();
-$controller = $router->run();
+$errorHandler = new ErrorHandler();
+
+try {
+    $router->run();
+} catch (\Exception $exception) {
+    $errorHandler->handle($exception);
+}
