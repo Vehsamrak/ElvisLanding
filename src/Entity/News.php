@@ -28,7 +28,6 @@ class News
     private $text;
 
     /**
-     * @param int|null $id
      * @param string   $date
      * @param string   $authorLogin
      * @param string   $authorName
@@ -36,19 +35,25 @@ class News
      * @param string   $text
      */
     public function __construct(
-        int $id,
         string $date,
         string $authorLogin,
         string $authorName,
         string $title,
         string $text
     ) {
-        $this->id = $id;
         $this->date = $date;
         $this->authorLogin = $authorLogin;
         $this->authorName = $authorName;
         $this->title = $title;
         $this->text = $text;
+    }
+
+    /**
+     * @param $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 
     /**

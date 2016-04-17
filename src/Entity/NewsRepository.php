@@ -20,8 +20,9 @@ class NewsRepository extends AbstractRepository
             SELECT n.id, n.title, n.text, n.date, a.name as authorName, a.login as authorLogin
             FROM news n 
             LEFT JOIN authors a ON a.login = n.author
-            ORDER BY date DESC LIMIT :newsCount'
-        );
+            ORDER BY date DESC LIMIT :newsCount
+        ');
+        
         $queryResults->bindParam('newsCount', $newsCount, \PDO::PARAM_INT);
         $queryResults->execute();
 
@@ -31,14 +32,16 @@ class NewsRepository extends AbstractRepository
 
         if ($queryResults) {
             foreach ($queryResults as $result) {
-                $newsCollection[] = new News(
-                    $result['id'],
+                $news = new News(
                     $result['date'],
                     $result['authorLogin'],
                     $result['authorName'],
                     $result['title'],
                     $result['text']
                 );
+                $news->setId($result['id']);
+                
+                $newsCollection[] = $news;
             }
         }
 
@@ -47,6 +50,6 @@ class NewsRepository extends AbstractRepository
 
     public function persist(News $news)
     {
-        
+
     }
 }

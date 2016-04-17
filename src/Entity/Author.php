@@ -1,6 +1,6 @@
 <?php
 
-namespace Siemens\Elvisland\Entity;
+namespace Entity;
 
 /**
  * News author
