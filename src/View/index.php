@@ -24,7 +24,7 @@
             <div class="news">
                 <div class="news-info-block">
                     <div class="news-author">
-                        <?= $newsEntry->getCreatedAt() ?>
+                        <?= $newsEntry->getDate() ?>
                     </div>
                 </div>
                 <div class="news-text">

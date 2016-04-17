@@ -13,7 +13,7 @@ class News
     private $id;
 
     /** @var string */
-    private $createdAt;
+    private $date;
 
     /** @var string */
     private $authorName;
@@ -27,20 +27,20 @@ class News
 
     /**
      * @param int    $id
-     * @param string $createdAt
+     * @param string $date
      * @param string $authorName
      * @param string $title
      * @param string $text
      */
     public function __construct(
         int $id,
-        string $createdAt,
+        string $date,
         string $authorName,
         string $title,
         string $text
     ) {
         $this->id = $id;
-        $this->createdAt = $createdAt;
+        $this->date = $date;
         $this->authorName = $authorName;
         $this->title = $title;
         $this->text = $text;
@@ -57,9 +57,9 @@ class News
     /**
      * @return string
      */
-    public function getCreatedAt(): string
+    public function getDate(): string
     {
-        return $this->createdAt;
+        return $this->date;
     }
 
     /**
