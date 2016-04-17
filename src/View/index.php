@@ -4,7 +4,7 @@
 
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 </html>
 
@@ -19,23 +19,45 @@
 
     <div class="newsbox">
         <span class="newsbox-title">Latest News</span>
-        <?php foreach ($news as $newsEntry) { ?>
+        <table>
 
-            <div class="news">
-                <div class="news-info-block">
-                    <div class="news-author">
-                        <?= $newsEntry->getDate() ?>
-                    </div>
-                </div>
-                <div class="news-text">
-                    <div class="news-title">
-                        <?= $newsEntry->getTitle() ?>
-                    </div>
-                    <?= $newsEntry->getText() ?>
-                </div>
-            </div>
+            <?php if (empty($news)) { ?>
+                <div class="break-30"></div>
+                There are no news yet
+                <div class="break-30"></div>
+            <?php } ?>
 
-        <?php } ?>
-        <span class="newsbox-bottom"></span>
+            <?php foreach ($news as $newsEntry) { ?>
+                <tr class="news">
+                    <td>
+
+                        <div class="news-info-block">
+                            <div class="news-author">
+                                <strong>
+                                    <?= $newsEntry->getDate() ?>
+                                </strong>
+                                <br>
+                                <?= $newsEntry->getAuthorName() ?>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+
+                        <div class="news-text">
+                            <div class="news-title">
+                                <?= $newsEntry->getTitle() ?>
+                            </div>
+                            <?= $newsEntry->getText() ?>
+                        </div>
+                    </td>
+                </tr>
+
+            <?php } ?>
+        </table>
+        <span class="newsbox-bottom">
+            <a href="/">News archive</a>
+            | <a href="/news/add">Publish news post</a>
+            | <a href="/">Administration page</a>
+        </span>
     </div>
 </div>

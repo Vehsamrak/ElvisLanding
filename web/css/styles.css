@@ -32,17 +32,19 @@ h1 {
     line-height: 20px;
 }
 
-.newsbox .news {
-    position: relative;
-    padding: 20px;
-    margin: 10px;
-    text-align: left;
+.newsbox .news td {
+    vertical-align: top;
 }
 
 .news-info-block {
     background-color: #AFFF8E;
-    display: inline-block;
     padding: 20px;
+    width: 80px;
+    text-align: center;
+}
+
+.newsbox table {
+    border-spacing: 0 20px;
 }
 
 .news-title {
@@ -56,8 +58,17 @@ h1 {
 }
 
 .news-text {
-    position: absolute;
-    display: inline-block;
     padding-left: 20px;
 }
 
+.newsbox-bottom {
+    font-size: 15px;
+}
+
+.newsbox-bottom a {
+    color: black;
+}
+
+.newsbox-bottom a:hover {
+    color: darkgreen;
+}
