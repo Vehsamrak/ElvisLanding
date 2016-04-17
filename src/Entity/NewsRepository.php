@@ -17,7 +17,7 @@ class NewsRepository extends AbstractRepository
     public function findLastSortedByDate(int $newsCount): array
     {
         $queryResults = $this->connection->prepare('
-            SELECT n.id, n.title, n.text, n.date, a.name as authorName
+            SELECT n.id, n.title, n.text, n.date, a.name as authorName, a.login as authorLogin
             FROM news n 
             LEFT JOIN authors a ON a.login = n.author
             ORDER BY date DESC LIMIT :newsCount'
@@ -34,6 +34,7 @@ class NewsRepository extends AbstractRepository
                 $newsCollection[] = new News(
                     $result['id'],
                     $result['date'],
+                    $result['authorLogin'],
                     $result['authorName'],
                     $result['title'],
                     $result['text']
@@ -42,5 +43,10 @@ class NewsRepository extends AbstractRepository
         }
 
         return $newsCollection;
+    }
+
+    public function persist(News $news)
+    {
+        
     }
 }

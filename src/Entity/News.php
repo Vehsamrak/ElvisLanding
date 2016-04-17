@@ -16,6 +16,9 @@ class News
     private $date;
 
     /** @var string */
+    private $authorLogin;
+
+    /** @var string */
     private $authorName;
 
     /** @var string */
@@ -24,23 +27,25 @@ class News
     /** @var string */
     private $text;
 
-
     /**
-     * @param int    $id
-     * @param string $date
-     * @param string $authorName
-     * @param string $title
-     * @param string $text
+     * @param int|null $id
+     * @param string   $date
+     * @param string   $authorLogin
+     * @param string   $authorName
+     * @param string   $title
+     * @param string   $text
      */
     public function __construct(
         int $id,
         string $date,
+        string $authorLogin,
         string $authorName,
         string $title,
         string $text
     ) {
         $this->id = $id;
         $this->date = $date;
+        $this->authorLogin = $authorLogin;
         $this->authorName = $authorName;
         $this->title = $title;
         $this->text = $text;
@@ -49,7 +54,7 @@ class News
     /**
      * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->id;
     }
@@ -65,6 +70,14 @@ class News
     /**
      * @return string
      */
+    public function getAuthorLogin(): string
+    {
+        return $this->authorLogin;
+    }
+
+    /**
+     * @return string
+     */
     public function getAuthorName(): string
     {
         return $this->authorName;
@@ -73,7 +86,7 @@ class News
     /**
      * @return string
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
