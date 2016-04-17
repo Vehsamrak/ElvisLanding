@@ -9,16 +9,16 @@
     "packages": [
         {
             "name": "vehsamrak/vehsa",
-            "version": "1.4.0",
+            "version": "1.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Vehsamrak/Vehsa.git",
-                "reference": "7452cb6921426ae886cf13ca4e64f29483f5b34a"
+                "reference": "df5b8f08a4125a2ba7e1cbb705396b1654c628da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Vehsamrak/Vehsa/zipball/7452cb6921426ae886cf13ca4e64f29483f5b34a",
-                "reference": "7452cb6921426ae886cf13ca4e64f29483f5b34a",
+                "url": "https://api.github.com/repos/Vehsamrak/Vehsa/zipball/df5b8f08a4125a2ba7e1cbb705396b1654c628da",
+                "reference": "df5b8f08a4125a2ba7e1cbb705396b1654c628da",
                 "shasum": ""
             },
             "require": {
@@ -46,7 +46,7 @@
                 "framework",
                 "mvc"
             ],
-            "time": "2016-04-16 22:01:41"
+            "time": "2016-04-17 08:39:05"
         }
     ],
     "packages-dev": [],

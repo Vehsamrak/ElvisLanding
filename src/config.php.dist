@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'environment'       => 'dev',
     'database_type'     => 'mysql',
     'database_host'     => '127.0.0.1',
     'database_user'     => 'root',
