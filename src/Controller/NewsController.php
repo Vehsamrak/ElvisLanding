@@ -48,7 +48,7 @@ class NewsController extends AbstractController
         if ($newsAdded) {
         	$this->redirect('/');
         } else {
-            $this->render('news', ['errors' => $errors]);
+            $this->render('news/newsAdd', ['errors' => $errors]);
         }
     }
 

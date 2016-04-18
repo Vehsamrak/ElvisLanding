@@ -17,6 +17,6 @@ class IndexController extends AbstractController
     {
         $newsProcessor = new NewsProcessor();
 
-        $this->render(['news' => $newsProcessor->getLastNews(self::MAIN_PAGE_NEWS_COUNT)]);
+        $this->render('index', ['news' => $newsProcessor->getLastNews(self::MAIN_PAGE_NEWS_COUNT)]);
     }
 }

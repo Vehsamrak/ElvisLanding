@@ -1,0 +1,10 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Admin page</title>
+</head>
+<body>
+    Admin page
+</body>
+</html>
