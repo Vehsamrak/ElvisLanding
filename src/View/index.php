@@ -57,7 +57,7 @@
         <span class="newsbox-bottom">
             <a href="/">News archive</a>
             | <a href="/news/add">Publish news post</a>
-            | <a href="/">Administration page</a>
+            | <a href="/admin">Administration page</a>
         </span>
     </div>
 </div>
